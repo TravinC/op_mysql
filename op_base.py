@@ -3,14 +3,14 @@ from tools.DB_Utils.op_mysql_tool import MyPymysqlPool
 
 # 数据库操作语句
 
-# 查询语句
+# 查询语句 
 def getAll(sql, param=None):
     mysql = MyPymysqlPool()
     try:
         if param is None:
-            result = mysql.getAll(sql)
+            result = mysql.getAll(sql) # "SELECT * FROM tb_word_sensitive;" 
         else:
-            result = mysql.getAll(sql, param)
+            result = mysql.getAll(sql, param) # [id] 一个参数，"SELECT * FROM tb_word_sensitive WHERE id = %s;"
     except Exception as e:
         # log.debug("请求db异常:", e)
         raise e
@@ -22,7 +22,7 @@ def getAll(sql, param=None):
 def insert(sql, param):
     mysql = MyPymysqlPool()
     try:
-        result = mysql.insert(sql, param)
+        result = mysql.insert(sql, param) # "INSERT INTO student(name, age) values(%s,%s);"，param = [name, age]
     except Exception as e:
         # log.debug("请求db异常:", e)
         raise e
