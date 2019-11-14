@@ -172,22 +172,9 @@ class MyPymysqlPool:
 if __name__ == '__main__':
     mysql = MyPymysqlPool()
 
-    # sqlAll = 'select t.id,t.encode,t.questions,t.answers from key_word t'
-    # result = mysql.getAll(sqlAll)
-    # print(result)
-
     # sqlAll = 'SELECT * FROM tb_word_sensitive'
     # result = mysql.getAll(sqlAll)
     # print(result)
-
-    # sqlAll = "select t.id,t.encode,t.questions,t.answers from key_word t"
-    # result = mysql.getMany(sqlAll, 2)
-    # print(result)
-    #
-    # result = mysql.getOne(sqlAll)
-    # print(result)
-    # mysql.insert(
-    #     "INSERT INTO key_word ( `encode`, `questions`, `answers`) VALUES ('%s','%s','%s')" % ('萨芬撒2', '按时发生', '按时发干啥'))
 
     # 释放资源
     mysql.dispose()
